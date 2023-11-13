@@ -300,12 +300,12 @@
                     <div class="mb-3">
                         <label for="name" class="form-label">Имя</label>
                         <input type="email" class="form-control" id="name"
-                               aria-describedby="emailHelp">
+                               aria-describedby="emailHelp" placeholder="Имя">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email</label>
                         <input type="email" class="form-control" id="exampleInputEmail1"
-                               aria-describedby="emailHelp">
+                               aria-describedby="emailHelp" placeholder="Email">
                     </div>
                     <div class="mb-3 form-check">
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
@@ -315,6 +315,42 @@
                 </form>
             </div>
         </main>
+        <h2 class="display-4 fw-normal text-body-emphasis text-center">FAQ</h2>
+        <div class="row">
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-primary form-control" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseButton1" aria-expanded="false"
+                        aria-controls="collapseExample">
+                    Как купить?
+                </button>
+                <button class="btn btn-primary form-control" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseButton2" aria-expanded="false"
+                        aria-controls="collapseExample">
+                    Как доставить?
+                </button>
+                <button class="btn btn-primary form-control" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseButton3" aria-expanded="false"
+                        aria-controls="collapseExample">
+                    Какая гарантия?
+                </button>
+            </p>
+
+            <div class="collapse" id="collapseButton1">
+                <div class="card card-body">
+                    Укажите Имя и Почту и мы Вам перезвоним!
+                </div>
+            </div>
+            <div class="collapse" id="collapseButton2">
+                <div class="card card-body">
+                    Доставка осуществляется Почтой России, OZON, Wildberries.
+                </div>
+            </div>
+            <div class="collapse" id="collapseButton3">
+                <div class="card card-body">
+                    Пожизненная гарантия!
+                </div>
+            </div>
+        </div>
 
     </div>
 
