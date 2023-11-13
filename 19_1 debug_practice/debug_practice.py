@@ -9,17 +9,19 @@ class MyServer(BaseHTTPRequestHandler):
 
     def __get_index(self):
         return """
-        <html><head>
-        <title>Blog</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        </head><body class="container">
-        <h1>Lorem blog</h1>
-        <ul class="list-group">
-        <li class="list-group-item"><a href='/?page=news1'>New one</a></li>
-        <li class="list-group-item"><a href='/?page=news2'>New two</a></li>
-        <li class="list-group-item"><a href='/?page=news3'>New three</a></li>
-        </ul>
-        </body>
+        <html>
+            <head>
+                <title>Blog</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+            </head>
+            <body class="container">
+                <h1>Lorem blog</h1>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href='/?page=news1'>New one</a></li>
+                    <li class="list-group-item"><a href='/?page=news2'>New two</a></li>
+                    <li class="list-group-item"><a href='/?page=news3'>New three</a></li>
+                </ul>
+            </body>
         </html>
         """
 
@@ -39,7 +41,7 @@ class MyServer(BaseHTTPRequestHandler):
         <title>Blog</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         </head><body class="container">
-        <div class="">
+        <div class="card">
         <div class="card-header">
         <a class="btn btn-primary" href="/">Back</a>
         </div>
@@ -58,7 +60,7 @@ class MyServer(BaseHTTPRequestHandler):
         if page_address:
             page_content = self.__get_blog_article(page_address[0])
         self.send_response(200)
-        self.send_header("Content-type", "application/json")
+        self.send_header("Content-type", "text/html")
         self.end_headers()
         self.wfile.write(bytes(page_content, "utf-8"))
 
