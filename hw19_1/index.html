@@ -126,6 +126,21 @@
         .lh-tight {
             line-height: 1.25;
         }
+
+        .scroll-table table {
+            width:100%;
+            table-layout: fixed;
+            border: none;
+        }
+
+        .scroll-table-body {
+            height: 200px;
+            overflow-x: auto;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
     </style>
 
 </head>
@@ -318,17 +333,20 @@
         <h2 class="display-4 fw-normal text-body-emphasis text-center">FAQ</h2>
         <div class="row">
             <p class="d-inline-flex gap-1">
-                <button class="btn btn-primary form-control" type="button" data-bs-toggle="collapse"
+                <button class="btn btn-primary form-control" type="button"
+                        data-bs-toggle="collapse"
                         data-bs-target="#collapseButton1" aria-expanded="false"
                         aria-controls="collapseExample">
                     Как купить?
                 </button>
-                <button class="btn btn-primary form-control" type="button" data-bs-toggle="collapse"
+                <button class="btn btn-primary form-control" type="button"
+                        data-bs-toggle="collapse"
                         data-bs-target="#collapseButton2" aria-expanded="false"
                         aria-controls="collapseExample">
                     Как доставить?
                 </button>
-                <button class="btn btn-primary form-control" type="button" data-bs-toggle="collapse"
+                <button class="btn btn-primary form-control" type="button"
+                        data-bs-toggle="collapse"
                         data-bs-target="#collapseButton3" aria-expanded="false"
                         aria-controls="collapseExample">
                     Какая гарантия?
@@ -351,9 +369,75 @@
                 </div>
             </div>
         </div>
-
+        <div class="scroll-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Номер</th>
+                        <th scope="col">Название товара</th>
+                        <th scope="col">Цена за штуку</th>
+                        <th scope="col">Количество</th>
+                        <th scope="col">Итоговая сумма</th>
+                        <th scope="col">Статус заказа</th>
+                    </tr>
+                </thead>
+            </table>
+            <div class="scroll-table-body">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Одеяло</td>
+                            <td>1000</td>
+                            <td>10</td>
+                            <td>10 000</td>
+                            <td>
+                                <div class="alert alert-primary" role="alert" >
+                                    Новый
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Подушка</td>
+                            <td>500</td>
+                            <td>100</td>
+                            <td>50 000</td>
+                            <td>
+                                <div class="alert alert-warning" role="alert">
+                                    Обработка
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Матрас</td>
+                            <td>30 000</td>
+                            <td>3</td>
+                            <td>90 000</td>
+                            <td>
+                                <div class="alert alert-success" role="alert">
+                                    Обработан
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Кровать</td>
+                            <td>100 000</td>
+                            <td>1</td>
+                            <td>100 000</td>
+                            <td>
+                                <div class="alert alert-danger" role="alert">
+                                    Отмена
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
